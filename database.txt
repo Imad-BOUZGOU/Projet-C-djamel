@@ -1,0 +1,9 @@
+Louise:f,,
+Raymond:m,Gaston,Augustine
+Lucien:m,Raymond,Louise
+Marie:f,Raymond,Louise
+Fernand:m,Raymond,Germaine
+Germaine:f,,
+Augustine:f,,
+Gaston:m,,
+Imad:m,Fernand,

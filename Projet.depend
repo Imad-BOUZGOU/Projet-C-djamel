@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1542553258 source:e:\l3\c avancé\projet\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<ctype.h>
+	"Interface.h"
+	"functions.h"
+
+1542553394 e:\l3\c avancé\projet\interface.h
+
+1542553552 source:e:\l3\c avancé\projet\functions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<ctype.h>
+	"functions.h"
+
+1542553085 e:\l3\c avancé\projet\functions.h
+
+1545939034 source:c:\users\djamel\desktop\projet-imad-bouzgou\functions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<ctype.h>
+	"functions.h"
+	"partie2.h"
+
+1545845938 c:\users\djamel\desktop\projet-imad-bouzgou\functions.h
+
+1545989990 source:c:\users\djamel\desktop\projet-imad-bouzgou\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<ctype.h>
+	"Interface.h"
+	"functions.h"
+	"partie2.h"
+	"recherche.h"
+
+1542553394 c:\users\djamel\desktop\projet-imad-bouzgou\interface.h
+
+1545991020 source:c:\users\djamel\desktop\projet-imad-bouzgou\partie2.c
+	"partie2.h"
+	<time.h>
+	"functions.h"
+	<stdio.h>
+
+1545831580 c:\users\djamel\desktop\projet-imad-bouzgou\partie2.h
+	"functions.h"
+
+1545990727 source:c:\users\djamel\desktop\projet-imad-bouzgou\recherche.c
+	"recherche.h"
+	<stdio.h>
+
+1545776140 c:\users\djamel\desktop\projet-imad-bouzgou\recherche.h
+	"functions.h"
+
+1545989971 source:c:\users\djamel\desktop\projet-imad-bouzgou\controlle.c
+	"functions.h"
+	"stdio.h"
+
+1545972866 source:e:\l3\c avancé\projet c djamal\projet-imad-bouzgou\functions.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+	<ctype.h>
+	"functions.h"
+	"partie2.h"
+
+1545972870 e:\l3\c avancé\projet c djamal\projet-imad-bouzgou\functions.h
+
+1545972892 e:\l3\c avancé\projet c djamal\projet-imad-bouzgou\partie2.h
+	"functions.h"
+
