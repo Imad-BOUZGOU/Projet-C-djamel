@@ -189,11 +189,11 @@ int  New(Arbre* racine,char* prenom,char* sexe,char* pere,char* mere,char* dateN
     Individu  * elementMere=findIndividu(mere,racine);
     Individu * elementPere=findIndividu(pere,racine);
     if(pere!=NULL && !elementPere ) {
-            printf("Pére existe pas...\n");
+            printf("Pere existe pas...\n");
         return -1;
     }
             if(mere!=NULL && !elementMere ) {
-            printf("Mére existe pas...\n");
+            printf("Mere existe pas...\n");
         return -1;
     }
 
@@ -202,7 +202,6 @@ int  New(Arbre* racine,char* prenom,char* sexe,char* pere,char* mere,char* dateN
             personne->dateNaissance=nouvelleDate(dateNaissance);
 
     }
-    printf("== %s  == ",dateDeces);
     if(strcmp(dateDeces,"0")){
             personne->dateDeces=nouvelleDate(dateDeces);
 
@@ -274,11 +273,9 @@ Individu* findIndividu(char *name,Arbre *arbre){
     Individu *result=NULL;
 
     Individu *personne;
-    printf("%s",arbre);
   /** on parcourt les racines **/
     while(arbre!=NULL  && result==NULL && arbre->individu!=NULL){
         personne=arbre->individu;
-
       /** on parcourt les noeuds de chaque racine**/
                   parcoursRacine(name,personne,&result);
 
@@ -297,7 +294,7 @@ Individu* findIndividu(char *name,Arbre *arbre){
 
 void parcoursRacine(char *name,Individu* racine,Individu** result){
 
-    if(racine!=NULL){
+    if(racine!=NULL && name!=NULL){
 
         printf("Nom actuel %s\n",racine->prenom);
         if(!strcasecmp(racine->prenom,name)) *result=racine;
