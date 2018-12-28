@@ -23,5 +23,5 @@ Liste * trierParDate(Arbre * racine,int type);
 
 void insererTriDate(Liste * liste,Individu * individu);
 
-
+void insererTriSexe(Liste * liste,Individu * ind,char sexe);
 #endif // RECHERCHE_H_INCLUDED

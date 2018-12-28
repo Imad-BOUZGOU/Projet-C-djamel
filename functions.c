@@ -10,7 +10,7 @@
 Arbre* load(char* fileName){
         char line[100];
         FILE* fichier=NULL;
-        char *prenom,*sexe,*pere,*mere,*dateNaissance,*dateDeces;
+        char *prenom,*sexe,*infos,*dates,*pere,*mere,*dateNaissance,*dateDeces;
         Arbre *racine=NULL;
 
 
@@ -27,11 +27,13 @@ Arbre* load(char* fileName){
                 line[strlen(line)-1]='\0';/* delete '\n'*/
 
                 prenom=strtok (line, ":");
-                sexe=strtok (NULL, ",");
+		infos=strtok(NULL,"!");
+		dates=strtok(NULL,"!");
+	        sexe=strtok (infos, ",");
                 pere=strtok (NULL, ",");
                 mere=strtok (NULL, ",");
-                dateNaissance=strtok (NULL, ",");
-                dateDeces=strtok (NULL, ",");
+                dateNaissance=strtok (dates, "-");
+                dateDeces=strtok (NULL, "-");
                 New(racine,prenom,sexe,pere,mere,dateNaissance,dateDeces);
 
             }
@@ -76,7 +78,7 @@ void ecrireDansFichier(Individu *individu,FILE *fichier){
         char * pere = malloc(30);
         mere= individu->mere ==NULL ? "" : individu->mere;
         pere= individu->pere ==NULL ? "" : individu->pere;
-        fprintf(fichier,"%s:%s%,s,%s,%s,%s\n",individu->prenom,individu->sexe,pere,mere,dateNaissance(individu),dateDeces(individu));
+        fprintf(fichier,"%s:%s%,%s,%s!%s-%s\n",individu->prenom,individu->sexe,pere,mere,dateNaissance(individu),dateDeces(individu));
         ecrireDansFichier(pere,fichier);
         ecrireDansFichier(mere,fichier);
     }

@@ -21,6 +21,43 @@ Liste *  TrierListe(Arbre * racine,int type){
     }
     return liste;
 }
+Liste * triParSexe(Arbre * racine,char sexe){
+    Liste * liste=malloc(sizeof(Liste));
+    liste->premier=NULL;
+    liste->dernier=NULL;
+	while(racine!=NULL){
+		insererTriSexe(liste,racine->individu,sexe);
+		racine=racine->next;
+	}
+	return liste;
+
+}
+void insererTriSexe(Liste * liste,Individu * ind,char sexe){
+	
+	if(ind==NULL) return;
+	if(ind->sexe==sexe) {
+	 Maillon * tete=liste->premier;
+    	Maillon * nouveau= creerMaillon(ind,NULL);
+    	 /* Si c'est le premier element a inserer*/
+    	if(tete==NULL){
+        /* La tete est egale a la queue*/
+        liste->premier=nouveau;
+        liste->dernier=nouveau;
+	 }else{
+	while(tete!=liste->dernier  &&   comparerNomIndividu(tete->individu,nouveau->individu)<=   0){
+	tete=tete->suivant;
+	}
+	if(comparerNomIndividu(tete->individu,nouveau->individu)==0){
+		return ;}
+	tete->suivant=nouveau;
+liste->dernier=nouveau;
+	}
+	}
+	insererTriSexe(liste,ind->pere, sexe);
+        insererTriSexe(liste,ind->mere, sexe);
+
+}
+
 
 
 Liste * trierParDate(Arbre * racine,int type){
@@ -34,7 +71,6 @@ void insererTriDate(Liste * liste,Individu * individu){
    if(individu!=NULL){
      Maillon * tete=liste->premier;
      Maillon * nouveau= creerMaillon(individu,NULL);
-     printf("insertion de %s \n",individu->prenom);
      /* Si c'est le premier element a inserer*/
     if(tete==NULL){
         /* La tete est egale a la queue*/
@@ -47,7 +83,7 @@ void insererTriDate(Liste * liste,Individu * individu){
         return ;
     }
 
-    Maillon * precedent=tete;
+    Maillon * precedent=liste->premier;
     /* Parcourir jusqu'a trouver la position exacte de cette individu*/
     while(tete!=liste->dernier && comparerNomIndividu(tete->individu,nouveau->individu)<=   0 ){
           precedent=tete;
