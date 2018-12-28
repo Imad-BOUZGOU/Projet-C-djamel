@@ -25,11 +25,11 @@ ListePays chargerOrigine(char * nomFichier)    {
                char * nomPays;
                char * codePays;
         fgets(line,100,fichier);
-           // chargement de tous les pays
-            while(fgets(line,100,fichier)!=NULL)//on teste et on récupère la ligne en mème temp.
+           /* chargement de tous les pays*/
+            while(fgets(line,100,fichier)!=NULL)/*on teste et on récupère la ligne en mème temp.*/
             {
                 printf("allo  ");
-                line[strlen(line)-1]='\0';// delete '\n'
+                line[strlen(line)-1]='\0';/*delete '\n'*/
 
                 nomPays=strtok (line, ",");
                 codePays=strtok (NULL, ",");
@@ -37,9 +37,7 @@ ListePays chargerOrigine(char * nomFichier)    {
                 Pays * pays=nouveauPays(nomPays,codePays);
                 ajouterPays(&lpays,pays);
 
-            }//EndWhile
-
-
+            }
 
     }else printf("Ce fichier n'existe pas !");
 
@@ -90,7 +88,7 @@ int calculerAge(Date * naissance,Date * actuel){
     month=naissance->mois;
     year=naissance->annee;
     int jourActuel,moisActuel,anneeActuelle;
-    // Si la date actuelle est null on calcule par rapport a la date de systéme
+    /* Si la date actuelle est null on calcule par rapport a la date de systéme*/
    if(actuel==NULL){
      /*get current date.*/
     ts = time(NULL);
@@ -104,7 +102,7 @@ int calculerAge(Date * naissance,Date * actuel){
             jourActuel, moisActuel+ 1, anneeActuelle);
    }else{
 
-    // Sinon on calcule par rapport a la date donnée
+    /* Sinon on calcule par rapport a la date donnée*/
     jourActuel=actuel->jour;
     moisActuel=actuel->mois-1;
     anneeActuelle=actuel->annee;

@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <windows.h>
 #include <ctype.h>
-#include "Interface.h"
 #include "functions.h"
 #include "partie2.h"
 #include "recherche.h"
@@ -19,16 +17,15 @@ int main()
     Arbre *liste=malloc(sizeof(Arbre));
     liste->individu=NULL;
     liste->next=NULL;
-    intro();
+	printf("AZUllll");
+/*    intro();*/
 
-    ListePays pays= chargerOrigine("iso2.csv");
-
-
+/*    ListePays pays= chargerOrigine("iso2.csv");
+*/
+	ListePays pays;
     while(!fin){
-        Color(2,16);//green
 
     printf("Projet@root> ");
-    Color(15,16);//white
     scanf("%s",command);
     fName=strtok (command, "(");
     printf("%s \n",fName);
@@ -40,7 +37,6 @@ int main()
             printf("Loading\n");
             argm=strtok (NULL, ")");
             liste=load(argm);
-             //printArbre(liste);
              printf("\n");
 
     };

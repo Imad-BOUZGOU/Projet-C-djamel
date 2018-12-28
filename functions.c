@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <windows.h>
 #include <ctype.h>
 #include "functions.h"
 #include "partie2.h"
@@ -15,17 +14,17 @@ Arbre* load(char* fileName){
         Arbre *racine=NULL;
 
 
-        fichier=fopen(fileName,"r");//ouvrir le fichier
+        fichier=fopen(fileName,"r");/*ouvrir le fichier*/
 
 
          if (fichier)
            {
 
-           // on mit tout les individus dans la liste
-            while(fgets(line,100,fichier)!=NULL)//on teste et on récupère la ligne en mème temp.
-            {
+           /* on mit tout les individus dans la liste*/
+            while(fgets(line,100,fichier)!=NULL)/*on teste et on récupère la ligne en mème temp.
+           */ {
 
-                line[strlen(line)-1]='\0';// delete '\n'
+                line[strlen(line)-1]='\0';/* delete '\n'*/
 
                 prenom=strtok (line, ":");
                 sexe=strtok (NULL, ",");
@@ -35,7 +34,7 @@ Arbre* load(char* fileName){
                 dateDeces=strtok (NULL, ",");
                 New(racine,prenom,sexe,pere,mere,dateNaissance,dateDeces);
 
-            }//EndWhile
+            }
 
 
 
@@ -248,7 +247,6 @@ void print(Individu* pPersonne){
     Individu *pere=NULL,*mere=NULL;
     Individu* personne=pPersonne;
 
-            //printf("\ndkhal %s",personne->prenom);
 
     if(personne!=NULL) {
                printf("\n%s: %c , ",personne->prenom,personne->sexe);
@@ -265,8 +263,6 @@ void print(Individu* pPersonne){
                 if(estDecede(personne)) printDate(personne,1);
                 else printf(" -Encore en vie.");
      personne=NULL;
-   // if(pere) print(pere);
-   //7 if(mere) print(mere);
     }
 
 
